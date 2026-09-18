@@ -1,0 +1,14 @@
+FROM node:24.11.1-alpine
+
+WORKDIR /app
+
+COPY . frontend
+
+WORKDIR frontend
+
+RUN ["npm", "install"]
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "--host"]
+
